@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Info from "./info";
 
 //Canvas, input and button component.
 const Canvas = (props) => {
