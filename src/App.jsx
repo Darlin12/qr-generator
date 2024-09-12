@@ -1,30 +1,21 @@
 import React from "react";
 import NavBar from "./components/NavBar";
-import QRCode from "qrcode";
-import Canvas from "./components/Canvas";
+import LeftSide from "./components/LeftSide";
+import RightSide from "./components/RightSide";
 import Footer from "./components/Footer";
-import Info from "./components/info";
+import InstructionsSection from "./components/InstructionsSection";
 import "./App.css";
-
-//Function that uses qrcode library to generate QR codes with the user input.
-function generateQR(input) {
-  var canvas = document.getElementById("canvas");
-  QRCode.toCanvas(canvas, input, (error) => {
-    if (error) console.error(error);
-    console.log("success!");
-  });
-}
 
 function App() {
   return (
     <div className="root">
       <NavBar />
-      <div className="main-container">
-        <Info />
-        <Canvas createFunction={generateQR} />
+      <div className="flex-container">
+        <LeftSide />
+        <RightSide />
       </div>
-
-      <Footer />
+      <InstructionsSection/>
+      
     </div>
   );
 }
